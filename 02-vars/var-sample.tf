@@ -28,8 +28,8 @@ output "numerical_output" {
 
 variable "example_list" {
     default = [
-        "Devops"
-        "AWS"
+        "Devops",
+        "AWS",
         true,
         "SYED",
         87
