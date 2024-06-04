@@ -74,6 +74,8 @@ output "country_op"{
     value = var.country
 }
 
-variable "environment" {
+variable "environment" {}
+
+output "environment_name" {
   value = "Name of the environment is ${var.environment}"
 }
