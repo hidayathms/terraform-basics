@@ -51,5 +51,5 @@ variable "map_example" {
 }
 
 output "sample_mapop" {
-    value = "${var.map_example["training]} has great scope of opportunity and this complete ${var.map_example["mode]}  and this is our ${var.map_example["batch]}"
+    value = "${var.map_example["training"]} has great scope of opportunity and this complete ${var.map_example["mode"]}  and this is our ${var.map_example["batch"]}"
 }
