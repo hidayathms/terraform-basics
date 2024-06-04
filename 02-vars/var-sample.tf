@@ -37,5 +37,5 @@ variable "example_list" {
 }
 
 output "list_op" {
-    value =  "Welcome to ${var.example_list[0]} with ${var.example_list[1]} training and this is batch ${var.example_list[4]}"
+    value =  "Welcome to ${var.example_list[0]} and ${var.example_list[1]} training and this is batch ${var.example_list[4]}"
 }
