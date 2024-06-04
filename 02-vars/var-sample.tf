@@ -1,5 +1,5 @@
 ## Declaring an empty variable
-variable "sample" {}
+# variable "sample" {}
 
 # Declaring a variable with default value
 variable "batch" {
