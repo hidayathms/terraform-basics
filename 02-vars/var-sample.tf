@@ -15,5 +15,5 @@ output "batch-out" {
 # Whenever your variable is enclosed in a set of string or between a sentance, then we have to enclose them in strings and with bash notation.data 
 
 output " batch_number" {
-value = "(Current bactch is var.batch)"
+value = "Current bactch is var.batch"
 }
