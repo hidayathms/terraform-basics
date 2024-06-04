@@ -67,3 +67,9 @@ variable "state" {}
 output "state_op"{
     value = var.state
 }
+
+variable "country" {}
+
+output "country_op"{
+    value = var.country
+}
