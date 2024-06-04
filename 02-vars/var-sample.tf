@@ -16,4 +16,4 @@ output "batch-out" {
 
 output " batch_number" {
 value = "(Current bactch is var.batch)"
-}"
+}
