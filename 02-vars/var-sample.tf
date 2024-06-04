@@ -22,3 +22,20 @@ variable "numerical" {
 output "numerical_output" {
     value = var.numerical
 }
+
+
+# Declaring the list variable : A key with multiple valies if reffered as list.data 
+
+variable "example_list" {
+    default = [
+        "Devops"
+        "AWS"
+        true,
+        "SYED",
+        87
+    ]
+}
+
+output "list_op" {
+    value =  "Welcome to ${var.example_list[0]} with ${var.example_list[1]} trainins and this our batch ${var.example_list[4]}"
+}
