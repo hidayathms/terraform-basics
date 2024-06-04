@@ -94,4 +94,6 @@ In essence, terraform apply makes the actual changes to your infrastructure as d
     - (Destroy): An existing resource will be destroyed.
     +/- (Replace): An existing resource will be replaced, meaning it will be destroyed and then recreated.
 
-### 
+#### when to user varialbes in quotes and $ notations
+Whenever your variable is enclosed in a set of string or between a sentance, then we have to enclose them in strings and with bash notation.data 
+Strings are supposed to be enclosed to be in double quotes while numbers and booleans doent need any type of quotes.
