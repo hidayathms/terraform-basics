@@ -61,4 +61,37 @@ By adopting Terraform, companies can achieve greater agility, efficiency, and re
 
 ---
 
+### There are 4 basic and imp commands of terraform
+---
+terraform init:    command initializes a Terraform working directory by performing the following tasks:
+
+    Downloads Provider Plugins: Fetches necessary provider plugins to interact with cloud services.
+    Initializes Backend: Sets up the remote backend for storing the Terraform state file.
+    Installs Modules: Downloads any modules referenced in the configuration.
+    Prepares Directory: Sets up the local working directory with necessary files.
+
+In essence, terraform init prepares your environment to manage infrastructure with Terraform.
+
+terraform plan:   command is used to create an execution plan for Terraform. It does the following:
+
+    Reads Current State: Loads the current state of the infrastructure.
+    Evaluates Configuration: Compares the current state with the desired state defined in the configuration files.
+    Generates a Plan: Outputs a detailed plan showing the changes that Terraform will make to reach the desired state (e.g., creating, updating, or destroying resources).
+
+This command helps you review the potential changes before applying them, ensuring you understand what Terraform will do.
+
+terraform apply:   command executes the actions proposed in a Terraform plan to create, update, or delete infrastructure resources. Here’s what it does:
+
+    Reads Configuration Files: Reads the configuration files to understand the desired state of the infrastructure.
+    Generates and Executes Plan: If a plan is not provided, it generates one. Then it proceeds to apply the changes specified in the plan.
+    Updates State: After making the changes, it updates the state file to reflect the current state of the infrastructure.
+
+In essence, terraform apply makes the actual changes to your infrastructure as defined by your Terraform configuration
+---
+### In Terraform, the symbols +, -, and +/- in the plan output mean:
+
+    + (Add): A new resource will be created.
+    - (Destroy): An existing resource will be destroyed.
+    +/- (Replace): An existing resource will be replaced, meaning it will be destroyed and then recreated.
+
 ### 
