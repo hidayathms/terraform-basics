@@ -29,13 +29,13 @@ output "numerical_output" {
 variable "example_list" {
     default = [
         "Devops",
-        "AWS",
+        "AWS_Cloud",
         true,
         "SYED",
-        87
+        56
     ]
 }
 
 output "list_op" {
-    value =  "Welcome to ${var.example_list[0]} with ${var.example_list[1]} trainins and this our batch ${var.example_list[4]}"
+    value =  "Welcome to ${var.example_list[0]} with ${var.example_list[1]} training and this is batch ${var.example_list[4]}"
 }
