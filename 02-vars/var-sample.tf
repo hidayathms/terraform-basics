@@ -62,3 +62,8 @@ variable "city" {}
 output "city_op"{
     value = var.city
 }
+variable "state" {}
+
+output "city_op"{
+    value = var.state
+}
