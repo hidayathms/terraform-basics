@@ -53,3 +53,12 @@ variable "map_example" {
 output "sample_mapop" {
     value = "${var.map_example["training"]} has great scope of opportunity and this complete ${var.map_example["mode"]}  and this is our ${var.map_example["batch"]}"
 }
+
+# In reality , we write the code very generic and values would be from the external file based on the environment.
+# We can declare varibles in a varibles file and that would be picked up by TF and the varibles file should alwarys ending with *.tfvars
+
+variable "city" {}
+
+output "city_op"{
+    value = var.city
+}
