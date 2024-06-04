@@ -64,6 +64,6 @@ output "city_op"{
 }
 variable "state" {}
 
-output "city_op"{
+output "state_op"{
     value = var.state
 }
