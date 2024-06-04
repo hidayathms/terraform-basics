@@ -5,3 +5,9 @@ variable "sample" {}
 variable "batch" {
   default = "batch56"
 }
+
+# printing a variable
+output "batch-out" {
+    value = var.batch
+  
+}
