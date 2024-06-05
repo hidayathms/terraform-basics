@@ -135,3 +135,12 @@ Teraform considers the properties that are mmenstioned in the code as a source o
 ## Datasource
 Datasource in terraform helps you fecth the information of the already existing resources.
 These datasources are also specific to the resources and you need to get the information from the terraform documentation.
+
+## What is terraform state file?
+The Terraform state file is a JSON-formated file that keeps track of the resources managed by Terrafrom and their current state in the target infrastructure
+
+## What will happen if you lose the stefile?
+That can be refered as a catastrophe and that is not at all acceptable.
+This means that terrafro lost track of all the infra changes made or created by it.
+
+## What is the best strategy to store or host statefile?
