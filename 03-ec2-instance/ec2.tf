@@ -21,7 +21,7 @@ resource "aws_security_group" "allow_tls" {
   name        = "b56_allow_tls"
   description = "Allow SSH inbound traffic and outbound traffic"
 
- ingress {
+ aws_security_group_ingress {
   description = aws_security_group.allow_tls.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 22
