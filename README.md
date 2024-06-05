@@ -119,7 +119,7 @@ Workstation is authentication is via IAM roles attached to the WKS
 ## What will happen when there is change in the code? Ist is goint ot destry and create the infra or just upsates the changes as defined in the code.
 ---
 Example: 
-    Did a change in the tag name, terraform upated the name of the instance with out any disruption
+    Did a change in the tag name, terraform upated the name of the instance without any disruption
     Did a change in instance type, terraform shutdow the instance and updated and started (disruptive)
     Did a change of AMI, old instance terminated/destroy and new recreated
 
@@ -131,3 +131,7 @@ Based on the type of change that you make, terraform is goint to act accordingly
 Then terraform considers that as a DRIFT.
 Drift means change in the configurtion that what terraform has created!!
 Teraform considers the properties that are mmenstioned in the code as a source of truth and will vanish the change that are done mannually.
+
+## Datasource
+Datasource in terraform helps you fecth the information of the already existing resources.
+These datasources are also specific to the resources and you need to get the information from the terraform documentation.
