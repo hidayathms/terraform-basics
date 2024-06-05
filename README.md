@@ -118,5 +118,11 @@ Workstation is authentication is via IAM roles attached to the WKS
 
 ## What will happen when there is change in the code? Ist is goint ot destry and create the infra or just upsates the changes as defined in the code.
 ---
-Did a change in the tag name, terraform upated the name of the instance with out any disruption
-Did a change in instance type, terraform shutdow the instance and updated and restarted the instance automatically
+Example: 
+    Did a change in the tag name, terraform upated the name of the instance with out any disruption
+    Did a change in instance type, terraform shutdow the instance and updated and started (disruptive)
+    Did a change of AMI, old instance terminated/destroy and new recreated
+
+Based on the type of change that you make, terraform is goint to act accordingly, that means based on the type of change it can be disruptive or non-disruptive
+
+---
