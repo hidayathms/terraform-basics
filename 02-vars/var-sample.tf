@@ -79,3 +79,10 @@ variable "environment" {}
 output "environment_name" {
   value = "Name of the environment is ${var.environment}"
 }
+
+## Example of the usage of shell varialbe
+varialbe "course " {}
+
+output "couse_op" {
+    value =var.course
+}
