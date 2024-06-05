@@ -143,4 +143,10 @@ The Terraform state file is a JSON-formated file that keeps track of the resourc
 That can be refered as a catastrophe and that is not at all acceptable.
 This means that terrafro lost track of all the infra changes made or created by it.
 
-## What is the best strategy to store or host statefile?
+## What is the best strategy to store or host statefile? and what is backend in terrafrom
+---
+1. it prefered to store the statefile in a storage centrally accesible ex. s3 bucket
+2. And Enable version to the backend
+3. Enable Encription to the backend
+A backend defiens where terraform stores its  state data file.
+---
