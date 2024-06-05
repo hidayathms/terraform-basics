@@ -1,4 +1,4 @@
-terraform import aws_security_group.b56_allow_tls sg-0f32dfce793fa31bc
+terraform import aws_security_group.allow_tls sg-0f32dfce793fa31bc
 
 resource "aws_instance" "web" {
     # ami                          = "ami-0f75a13ad2e340a58"
