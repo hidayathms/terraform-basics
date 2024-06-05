@@ -1,7 +1,7 @@
 resource "aws_instance" "web" {                 # Arguments
   ami                          = "ami-0f75a13ad2e340a58"
   instance_type                = "t2.micro"
-  security_groups              = ["aws_security_group.allow_tls.id"]
+  security_groups              = [aws_security_group.allow_tls.id]
 
   tags = {
     Name                      = "DevOps-with-AWS-Labinstance"
