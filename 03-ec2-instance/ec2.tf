@@ -8,19 +8,11 @@ resource "aws_instance" "web" {
   }
 }
 
-output "private_ip_address" {
-  value                       = aws_instance.web.private_ip
-}
-
-output "instance_arn" {
-  value                      = aws_instance.web.arn
-}
-
 ## how to create security group
 
 resource "aws_security_group" "allow_tls" {
-  name                      = "b56_allow_tls"
-  description               = "Allow SSH inbound traffic and outbound traffic"
+  name                = "b56_allow_tls"
+  description         = "Allow SSH inbound traffic and outbound traffic"
 
     ingress {
     cidr_blocks       = ["0.0.0.0/0"]
