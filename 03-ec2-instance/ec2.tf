@@ -11,8 +11,34 @@ output "private_ip_address" {                   #Atributes
   value = aws_instance.web.private_ip
 }
 
-output "instance_arn" {                   #Atributes
+output "instance_arn" {                         #Atributes
   value = aws_instance.web.arn
 }
-# AMI_ID="ami-072983368f2a6eab5" Not the correct approach
-# SecurityGroup_ID="sg-014143c52beef6877"
+
+## how to create security group
+
+resource "aws_security_group" "allow_tls" {
+  name        = "b56_allow_tls"
+  description = "Allow SSH inbound traffic and outbound traffic"
+
+  tags = {
+    Name = "b56_allow_tls"
+  }
+}
+
+resource "aws_vpc_security_group_ingress_rule" "SSH from vpc" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv4         = ["0.0.0.0/0"]
+  from_port         = 22
+  ip_protocol       = "tcp"
+  to_port           = 22
+}
+
+
+resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv4         = "0.0.0.0/0"
+  ip_protocol       = "-1" 
+}
+
+

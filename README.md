@@ -126,3 +126,8 @@ Example:
 Based on the type of change that you make, terraform is goint to act accordingly, that means based on the type of change it can be disruptive or non-disruptive
 
 ---
+
+## What will happen if you change any of the properties of the instance manully that was provisioned wiht teraform??
+Then terraform considers that as a DRIFT.
+Drift means change in the configurtion that what terraform has created!!
+Teraform considers the properties that are mmenstioned in the code as a source of truth and will vanish the change that are done mannually.
