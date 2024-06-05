@@ -1,25 +1,26 @@
 resource "aws_instance" "web" {                 # Arguments
-  ami               = "ami-0f75a13ad2e340a58"
-  instance_type     = "t2.micro"
+  ami                          = "ami-0f75a13ad2e340a58"
+  instance_type                = "t2.micro"
+  security_groups              = ["aws_security_group.allow_tls.id"]
 
   tags = {
-    Name = "DevOps-with-AWS-Labinstance"
+    Name                      = "DevOps-with-AWS-Labinstance"
   }
 }
 
 output "private_ip_address" {                   #Atributes
-  value = aws_instance.web.private_ip
+  value                       = aws_instance.web.private_ip
 }
 
 output "instance_arn" {                         #Atributes
-  value = aws_instance.web.arn
+  value                      = aws_instance.web.arn
 }
 
 ## how to create security group
 
 resource "aws_security_group" "allow_tls" {
-  name        = "b56_allow_tls"
-  description = "Allow SSH inbound traffic and outbound traffic"
+  name                      = "b56_allow_tls"
+  description               = "Allow SSH inbound traffic and outbound traffic"
 
     ingress {
     cidr_blocks       = ["0.0.0.0/0"]
