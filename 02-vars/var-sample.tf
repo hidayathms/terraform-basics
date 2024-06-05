@@ -1,88 +1,104 @@
-## Declaring an empty variable
-# variable "sample" {}
+# Declaring an empty variable
+# variable "sample" {} 
 
-# Declaring a variable with default value
+# Declaring a variable with a default value
 variable "batch" {
-  default = "batch56"
+    default = "batch56"
 }
 
-# printing a variable
-output "batch-out" {
+# Printing a variable with outputs
+output "batch-op" {
     value = var.batch
 }
 
+# When enclose a variable in Quotes and when to use $ notation for a variable ???
+# Whenever your variable is enclosed in a set of strings or in between a sentence, then we to enslose them in strings and with bash notation.
+
 output "batch_number" {
-value = "Current bactch is ${var.batch}"
+    value = "Currrent Batch is ${var.batch}"
 }
 
-variable "numerical" {
-  default = 100
+variable "numerival" {
+    default = 100
 }
 
-output "numerical_output" {
-    value = var.numerical
+output "numerical_op" {
+    value = var.numerival
 }
 
-
-# Declaring the list variable : A key with multiple valies if reffered as list.data 
+# Declaring a list variable !!!!  A Key with multiple values is referred as List. 
 
 variable "example_list" {
     default = [
-        "Devops",
-        "AWS_Cloud",
-        true,
-        "SYED",
-        56
+        "DevOps" ,   
+        "AWS_Cloud", 
+        false,       
+        "Manoj",     
+        56           
     ]
 }
 
-output "list_op" {
-    value =  "Welcome to ${var.example_list[0]} and ${var.example_list[1]} training and this is batch ${var.example_list[4]}"
+# Printing a List Variable
+output "example_list_op" {
+    value = "Welcome To ${var.example_list[0]} with ${var.example_list[1]} Training and this our batch ${var.example_list[4]} and training by ${var.example_list[3]}"
 }
 
-#Declaring map varialbe
 
-variable "map_example" {
+# Declaring a Map Variable 
+variable "training_map" {
     default = {
-        batch   = "b56"
-        mode     = "online"
-        training   ="DevOpswithAWS"
+        batch       = "b56" 
+        mode        = "Online"
+        training    = "DevOpsWithAWS"
     }
 }
 
-output "sample_mapop" {
-    value = "${var.map_example["training"]} has great scope of opportunity and this complete ${var.map_example["mode"]}  and this is our ${var.map_example["batch"]}"
+# Printing a Map Variable
+output "training_map_op" {
+    value = "${var.training_map["training"]} has great scope of opportunities and this is complete ${var.training_map["mode"]} and this is our batch ${var.training_map["batch"]}"
 }
 
-# In reality , we write the code very generic and values would be from the external file based on the environment.
-# We can declare varibles in a varibles file and that would be picked up by TF and the varibles file should alwarys ending with *.tfvars
 
-variable "city" {}
 
-output "city_op"{
-    value = var.city
+
+
+### In realitly, we write the code very generic and values would be from the external file based on the environment.
+### We can declare variables in a variable file and that woyld be picked up by TF and the variables file should always ending with *.tfvars.check "
+
+### terraform.tfvars is the default file that would be picked. 
+
+variable "city" {} 
+
+output "city_name" {
+    value = var.city 
 }
-variable "state" {}
 
-output "state_op"{
-    value = var.state
+variable "state" {} 
+
+output "state_name" {
+    value = var.state 
 }
 
-variable "country" {}
+variable "country" {} 
 
-output "country_op"{
-    value = var.country
+output "country_name" {
+    value = var.country 
 }
 
 variable "environment" {}
 
 output "environment_name" {
-  value = "Name of the environment is ${var.environment}"
+    value = "Name of the environment is ${var.environment}"
 }
 
-## Example of the usage of shell varialbe
+
+# Example of the usage of Shell Varaible
+
+# You can supply the value of the SHELL Variable from Command Line using export
+# export TF_VAR_varName=value
+
 variable "course" {}
 
-output "couse_op" {
-    value =var.course
+output "course_op" {
+    value   = var.course
 }
