@@ -5,7 +5,7 @@ resource "aws_instance" "app" {
   vpc_security_group_ids       = [aws_security_group.allows_tls.id]
 
   tags = {
-    Name                      = "AWS-Labinstance"
+    Name                      = "AWS-Cloud-Labinstance"
   }
 }
 
