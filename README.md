@@ -97,3 +97,18 @@ In essence, terraform apply makes the actual changes to your infrastructure as d
 #### when to user varialbes in quotes and $ notations
 Whenever your variable is enclosed in a set of string or between a sentance, then we have to enclose them in strings and with bash notation.data 
 Strings are supposed to be enclosed to be in double quotes while numbers and booleans doent need any type of quotes.
+
+## varaible Precedence In Terraform
+Variable precedence in Terraform is the order in which Terraform evaluates and applies variables from different sources12. The order of precedence is from the highest to lowest priority32:
+    CLI arguments (-var and -var-file CLI parameters)32
+    Environment variables1245
+    *.auto.tfvars files312
+    Terraform.tfvars file12
+    shell based varibles
+
+## Atrribute and Arguments
+
+Arguments :  properties of the resource that to like to define as part of creation. ex: instance_type,ami etc
+
+Atributes : they are the properties of the machine that would be comming up post the creation of the resources. 
+ex: public_ip, private_ip, public_dns, arn etc.
