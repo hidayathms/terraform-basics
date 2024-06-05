@@ -112,3 +112,6 @@ Arguments :  properties of the resource that to like to define as part of creati
 
 Atributes : they are the properties of the machine that would be comming up post the creation of the resources. 
 ex: public_ip, private_ip, public_dns, arn etc.
+
+## How authentication to aws cloud is happening from workstation
+Workstation is authentication is via IAM roles attached to the WKS
