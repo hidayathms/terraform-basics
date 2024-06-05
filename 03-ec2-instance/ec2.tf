@@ -1,4 +1,4 @@
-resource "aws_instance" "web" {                 # Arguments
+resource "aws_instance" "web" {
   ami                          = "ami-0f75a13ad2e340a58"
   instance_type                = "t2.micro"
   security_groups              = [aws_security_group.allow_tls.id]
@@ -8,11 +8,11 @@ resource "aws_instance" "web" {                 # Arguments
   }
 }
 
-output "private_ip_address" {                   #Atributes
+output "private_ip_address" {
   value                       = aws_instance.web.private_ip
 }
 
-output "instance_arn" {                         #Atributes
+output "instance_arn" {
   value                      = aws_instance.web.arn
 }
 
