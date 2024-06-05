@@ -13,6 +13,6 @@ resource "aws_instance" "web" {
 data "aws_ami" "example" {
   most_recent      = true
   name_regex       = "DevOps-LabImage-Centos-8"
-  owners           = ["se647070675341lf"]
+  owners           = ["647070675341lf"]
 }
 
