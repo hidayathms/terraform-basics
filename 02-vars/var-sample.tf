@@ -68,11 +68,11 @@ output "state_op"{
     value = var.state
 }
 
-# variable "country" {}
+variable "country" {}
 
-# output "country_op"{
-#     value = var.country
-# }
+output "country_op"{
+    value = var.country
+}
 
 # variable "environment" {}
 
