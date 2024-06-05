@@ -81,7 +81,7 @@ output "environment_name" {
 }
 
 ## Example of the usage of shell varialbe
-varialbe "course " {}
+varialbe "course" {}
 
 output "couse_op" {
     value =var.course
