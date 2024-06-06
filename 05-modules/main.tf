@@ -1,3 +1,5 @@
+# Root Module :  The place where you run the terraform command is called root module
+
 provider "aws" {}
 
 terraform {
@@ -8,6 +10,7 @@ terraform {
   }
 }
 
+## Calling a Module
 module "local-module" {
     source = "./local"
 }
