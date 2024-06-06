@@ -152,3 +152,15 @@ A backend defiens where terraform stores its  state data file.
 ---
 
 ### Modules sources in terraform
+---
+1. s3 bucket
+2. github  (Keeping modules remote is quite mature thing)
+3. local modules
+4. Terraform Registry modules
+---
+
+### How can we pass the outputs from one module to other in terraform
+--
+In Terraform, by defaulty you cannot pass the outputs from one module to another directly.  it should be only through ROOT module only.
+--
+
