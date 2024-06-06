@@ -7,12 +7,14 @@ resource "aws_instance" "app" {
   tags = {
     Name = "Ec2-From-Modules"
 }
+ provisioner "local-exec" {    
+    command = "echo ${self.private_ip} >> local_private_ips.txt"  
+}
 }
 
 # Step 3 : Declare the input that you need to consume as variable
 variable "sg" {}
 
-# Step 1 : To share the info it has to declared as output first.
 output "public_ip"{
     value =aws_instance.app.public_ip
 }

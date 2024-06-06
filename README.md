@@ -164,3 +164,15 @@ A backend defiens where terraform stores its  state data file.
 In Terraform, by defaulty you cannot pass the outputs from one module to another directly.  it should be only through ROOT module only.
 --
 
+## Provisioners in terraform
+In Terraform, "provisioners" are used to execute scripts or commands on a local or remote machine as part of the resource creation process. They can be useful for bootstrapping a resource, performing configuration management tasks, or running arbitrary commands as part of the infrastructure provisioning process. Provisioners are typically used to complement the declarative nature of Terraform with imperative actions that need to be performed on the resources.
+
+There are several types of provisioners in Terraform:
+
+    1. local-exec: Executes a command locally on the machine running Terraform.
+    2. remote-exec: Executes a command on a remote machine, usually the machine created by the Terraform resource.
+    3. file: Copies files from the machine running Terraform to the remote machine.
+    Example:
+    provisioner "local-exec" {
+    command = "echo ${self.private_ip} > ip_address.txt"
+  }
