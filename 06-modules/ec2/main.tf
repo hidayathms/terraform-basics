@@ -9,10 +9,10 @@ resource "aws_instance" "app" {
 }
 }
 
-# Step 1 : Declare the input that you need to consume as variable
+# Step 3 : Declare the input that you need to consume as variable
 variable "sg" {}
 
-# To share the info it has to declared as output first.
+# Step 1 : To share the info it has to declared as output first.
 output "public_ip"{
     value =aws_instance.app.public_ip
 }
