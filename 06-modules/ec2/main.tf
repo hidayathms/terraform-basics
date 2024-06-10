@@ -13,13 +13,8 @@ resource "aws_instance" "app" {
 #     command = "echo ${self.private_ip} >> local_private_ips.txt"  
 # }
 
-# #Demo on remote Provisioner
-provisioner "remote-exec" {    
-    inline = [      
-        "puppet apply",      
-        "consul join ${aws_instance.web.private_ip}",    
-        ]  
-}
+
+
 }
 
 # Step 3 : Declare the input that you need to consume as variable
