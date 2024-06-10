@@ -6,8 +6,19 @@ resource "aws_instance" "app" {
   tags = {
     Name = "Ec2-From-Modules"
 }
- provisioner "local-exec" {    
-    command = "echo ${self.private_ip} >> local_private_ips.txt"  
+
+# # Declaring the provisioner within the resource!
+# #Demo on local Provisioner
+#  provisioner "local-exec" {    
+#     command = "echo ${self.private_ip} >> local_private_ips.txt"  
+# }
+
+# #Demo on remote Provisioner
+provisioner "remote-exec" {    
+    inline = [      
+        "puppet apply",      
+        "consul join ${aws_instance.web.private_ip}",    
+        ]  
 }
 }
 

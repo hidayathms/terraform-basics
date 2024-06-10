@@ -181,3 +181,13 @@ There are several types of provisioners in Terraform:
     provisioner "local-exec" {
     command = "echo ${self.private_ip} > ip_address.txt"
   }
+
+  ## Provisioners placement..
+  ---
+  If you place a provisioner within the resource, and if the provisioner fails because of any reason, terraform conder the entire resouce ceration itself as a failure and marks the created object as tained and that means on next Terraform Apply Object will be destroyed and re-created.
+
+  So, its always recommended to keep the provisioners outside the Resource.
+
+  But provisioners should always be kept with in the resource only.
+
+  Thats why there is a null resouces, which creates nothing and thats main intention is to run provisioners.
