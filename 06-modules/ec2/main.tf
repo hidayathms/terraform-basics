@@ -7,7 +7,7 @@ resource "aws_instance" "app" {
     Name = "Ec2-From-Modules"
 }
  provisioner "local-exec" {    
-    command = "echo ${self.private_ip} >> /hoem/centos/local_private_ips.txt"  
+    command = "echo ${self.private_ip} >> local_private_ips.txt"  
 }
 }
 
