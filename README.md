@@ -165,7 +165,12 @@ In Terraform, by defaulty you cannot pass the outputs from one module to another
 --
 
 ## Provisioners in terraform
-In Terraform, "provisioners" are used to execute scripts or commands on a local or remote machine as part of the resource creation process. They can be useful for bootstrapping a resource, performing configuration management tasks, or running arbitrary commands as part of the infrastructure provisioning process. Provisioners are typically used to complement the declarative nature of Terraform with imperative actions that need to be performed on the resources.
+In Terraform, "provisioners" are used to execute scripts or certain tasks or commands on a local or remote machine as part of the resource creation process. 
+
+Provisioners is a sub-block in resource.
+Resource attributes can be used inside provisioner and those should be referred as self.<attribute>
+Provisioners by default are create-time-provisioners 
+we can make multiple provisioners and provisioner types also in the same resource.
 
 There are several types of provisioners in Terraform:
 
