@@ -12,7 +12,7 @@ resource "null_resource" "playbook" {
     provisioner "remote-exec" {
         inline = [
             "git clone https://github.com/hidayathms/ansible.git",
-            "ansible-pull -U https://github.com/hidayathms/ansible.git -e ENV=dev -e COMPONENT=mongodb roboshop-pull.yml"
+            "ansible-pull -e ENV=dev -e COMPONENT=mongodb roboshop-pull.yml"
         ]
     }
 }
