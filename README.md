@@ -191,3 +191,25 @@ There are several types of provisioners in Terraform:
   But provisioners should always be kept with in the resource only.
 
   Thats why there is a null resouces, which creates nothing and thats main intention is to run provisioners.
+
+
+## What are the points to be considered while designing and creating a network?
+1. Understand the business need of the network
+2. Analyse the number of IP address needed.
+3. Understand how many subnets are needed.
+4. Conclude how many subnets need access to internet and how many dont
+5 Select a CIDR range either Class-A or B(10 or 172 series)
+6. Ensuer the selected CIDR range is not confilicting with any of your existing AWS accounts in your project.
+
+## Four our roboshop projects, how many IP'S do i need?
+
+DEV : 256 : 10.0.0.0/24
+PROD:1024 : 10.1.0.0/22
+
+## what is Public and Private subnet?
+Both of them are pieces from a network, but the major difference is that in puclic IP address.
+In public subnet, all the machines that are lauched will have a public ip address by default and will have direct access to internet
+In private subnets, all that machines that are launched will only have private ip address and no public ip address, that means we cannot connect these machine to internet.
+
+So in our project, what all machines should be in privte network.
+Aprart from frontend all other machines to be on private network.
