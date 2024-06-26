@@ -198,7 +198,7 @@ There are several types of provisioners in Terraform:
 2. Analyse the number of IP address needed.
 3. Understand how many subnets are needed.
 4. Conclude how many subnets need access to internet and how many dont
-5 Select a CIDR range either Class-A or B(10 or 172 series)
+5. Select a CIDR range either Class-A or B(10 or 172 series)
 6. Ensuer the selected CIDR range is not confilicting with any of your existing AWS accounts in your project.
 
 ## Four our roboshop projects, how many IP'S do i need?
