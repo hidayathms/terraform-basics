@@ -188,7 +188,7 @@ There are several types of provisioners in Terraform:
 
   So, its always recommended to keep the provisioners outside the Resource.
 
-  But provisioners should always be kept with in the resource only.
+  But provisioners should always be kept with in the resource only..
 
   Thats why there is a null resouces, which creates nothing and thats main intention is to run provisioners.
 
@@ -212,4 +212,4 @@ In public subnet, all the machines that are lauched will have a public ip addres
 In private subnets, all that machines that are launched will only have private ip address and no public ip address, that means we cannot connect these machine to internet.
 
 So in our project, what all machines should be in privte network.
-Aprart from frontend all other machines to be on private network.
+Aprart from frontend all other machines to be on private network..
