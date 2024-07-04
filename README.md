@@ -211,5 +211,8 @@ Both of them are pieces from a network, but the major difference is that in pucl
 In public subnet, all the machines that are lauched will have a public ip address by default and will have direct access to internet
 In private subnets, all that machines that are launched will only have private ip address and no public ip address, that means we cannot connect these machine to internet.
 
-So in our project, what all machines should be in privte network.
+## In our project, what all machines should be in privte network.
+'''
 Aprart from frontend all other machines to be on private network..
+
+'''
