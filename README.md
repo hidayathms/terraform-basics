@@ -216,3 +216,29 @@ In private subnets, all that machines that are launched will only have private i
 Aprart from frontend all other machines to be on private network..
 
 '''
+
+## How can I implement the network with a public and a private network?
+
+1. Create a VPC with default tenacy and mention the CIDR as 10.2.0.0/24
+2. Create subnets one in us-east-1a and us-east-1b with subnets as 10.2.0.0/25 and 10.2.0.128/25 respectively
+3. Ensure you mention one subnet as public and other as private
+4. Ensure you enable on the public subnet and this ensures the public IP address to the instances launched
+5. Create Internet Gateway and attach it to the roboshop-vpc (You can attache only one IGW per VPC)
+6. Create Public Route-Table and associate with the public-subnet and with a route of 0.0.0.0/0 with IGW
+7. Create Private Route-Table and associate with the private-subnet ans with default route.
+8. Now you should be able to SSH to the machines launched in the public subnet.
+9. Also public-machines should be able to talk to internet, but no the private machines
+
+
+## All the machine should have access to internet and why?( If a machine needs to download the packege etc.)
+
+We need to design the network in such a way that noone should be able to access the private machines from the internet. but, if the private machine want to talk, they should be able to tald to the internet.
+This can be achieved with NAT gateway and Create NAT gateway with the public-vpc or internet facing vpc and Update the route tables of private-rt with respective CIDR 0.0.0.0/0 
+Then you private workstations/machines can access to internet.
+
+## VPC Peering
+
+But if you try to SSH from your workstation to any of the public or private machines with their private ip, it wont work as they are in 2 diffrerent networks.
+
+## How can we enable Private communication between 2 different VPC's ? USING VPC PEERING
+Update the route tables of default-t, public-rt and private-rt with respective CIDR range, then private communications would be enabled between the 2 VPC's
